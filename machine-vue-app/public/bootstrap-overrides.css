@@ -1,0 +1,33 @@
+.bg-primary {
+	background-color: black;
+	color: white;
+}
+
+.bg-info {
+	background-color: #606060;
+	color: white;
+	font-weight: normal;
+}
+
+.btn.btn-success, .btn.btn-primary {
+	background-color: black;
+	color: white;
+	border-color: black;
+}
+
+a, .esdoc-field-hyperlink, .esdoc-field-email  {
+	color: grey;
+	text-decoration: underline;
+}
+
+.alert-info {
+	background-color: black;
+	color: white;
+	font-weight: normal;
+}
+
+.alert-warning, .alert-danger {
+	background-color: red;
+	color: white;
+	font-weight: normal;
+}
