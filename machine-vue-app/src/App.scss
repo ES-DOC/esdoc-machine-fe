@@ -1,0 +1,52 @@
+.hide-table-header {
+    display: none;
+}
+
+nav.main-header {
+    background-color: #d9edf7;
+    color: #000000;    
+}
+
+table {
+    tbody {
+        tr.table-esdoc-selected {
+            background-color: #d9edf7;
+            border-color: #d9edf7;
+            color: #000000;
+        }
+    }
+}
+
+table.esdoc-table-info {
+    margin-bottom: 0.9em;
+    thead {
+        background-color: #d9edf7;
+        color: #000000;
+        tr {
+            th {
+                border-bottom: 0px;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td.caption {
+                width: 25%;
+            }
+        }
+    }
+}
+
+div.esdoc-table-caption {
+    margin-bottom: -10px;
+    table {
+        thead {
+            background-color: #337ab7;
+            color: #fff;
+        }
+    }
+}
+
+// Include Bootstrap and BootstrapVue SCSS files
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
