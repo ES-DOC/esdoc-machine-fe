@@ -7,7 +7,7 @@
         &nbsp;
         <b>ES-DOC</b> Explorer <span class="app-version">v1.1.5</span></a>
         <ul class="navbar-nav ml-auto">
-          <li class="navbar-text" style="color: black;"><b>CMIP6 Machine: \{\{ institute.name \}\} &gt; \{\{ machine.name \}\}</b></li>
+          <li class="navbar-text" style="color: black;"><b>CMIP6 Machine: {{ institute.name }} &gt; {{ machine.name }}</b></li>
         </ul>
       </nav>
       <div class="container-fluid">
@@ -18,14 +18,14 @@
                 <div class="row sub-section">
                   <span style="width: 30%; font-weight: bold; margin-top: 6px;">Institute</span>
                   <select id="source-selector2" class="custom-select" style="width: 70%;">
-                    <option value="[object Object]">\{\{ institute.name \}\}</option>
+                    <option value="[object Object]">{{ institute.name }}</option>
                     <option value="[object Object]">[all other institutes with available machines]</option>
                   </select>
                 </div>
                 <div class="row sub-section">
                   <span style="width: 30%; font-weight: bold; margin-top: 6px;">Machine</span>
                   <select id="source-selector2" class="custom-select" style="width: 70%;">
-                    <option value="[object Object]">\{\{ machine.name \}\}</option>
+                    <option value="[object Object]">{{ machine.name }}</option>
                     <option value="[object Object]">[all other available machines for the institute in question]</option>
                   </select>
                 </div>
@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="col-9">
-            <div class="sub-section"><strong>\{\{ institute.name \}\} &gt; \{\{ machine.name \}\}</strong></div>
+            <div class="sub-section"><strong>{{ institute.name }} &gt; {{ machine.name }}</strong></div>
             <div style="height: 1210px; overflow-y: auto;">
               <div>
                 <div class="sub-section"><strong>Identity</strong></div>
@@ -55,7 +55,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.name \}\}
+                        {{ machine.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -78,7 +78,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.partition \}\}
+                        {{ machine.partition }}
                       </td>
                     </tr>
                   </tbody>
@@ -104,7 +104,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.location \}\}
+                        {{ machine.location }}
                       </td>
                     </tr>
                   </tbody>
@@ -127,7 +127,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.description \}\}
+                        {{ machine.description }}
                       </td>
                     </tr>
                   </tbody>
@@ -150,7 +150,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.online_documentation \}\}
+                        {{ machine.online_documentation }}
                       </td>
                     </tr>
                   </tbody>
@@ -173,13 +173,13 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value: From</strong></td>
                       <td>
-                        \{\{ machine.when_available_from \}\}
+                        {{ machine.when_available_from }}
                       </td>
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value: To</strong></td>
                       <td>
-                        \{\{ machine.when_available_to \}\}
+                        {{ machine.when_available_to }}
                       </td>
                     </tr>
                   </tbody>
@@ -202,7 +202,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.os \}\}
+                        {{ machine.os }}
                       </td>
                     </tr>
                   </tbody>
@@ -228,7 +228,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.vendor \}\}
+                        {{ machine.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -251,7 +251,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.model_number \}\}
+                        {{ machine.model_number }}
                       </td>
                     </tr>
                   </tbody>
@@ -278,7 +278,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.name \}\}
+                        {{ machine.compute_pool_1.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -301,7 +301,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.description \}\}
+                        {{ machine.compute_pool_1.description }}
                       </td>
                     </tr>
                   </tbody>
@@ -324,7 +324,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.vendor \}\}
+                        {{ machine.compute_pool_1.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -347,7 +347,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.model_number \}\}
+                        {{ machine.compute_pool_1.model_number }}
                       </td>
                     </tr>
                   </tbody>
@@ -370,7 +370,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.number_of_nodes \}\}
+                        {{ machine.compute_pool_1.number_of_nodes }}
                       </td>
                     </tr>
                   </tbody>
@@ -393,7 +393,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.memory_per_node \}\}
+                        {{ machine.compute_pool_1.memory_per_node }}
                       </td>
                     </tr>
                   </tbody>
@@ -416,7 +416,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.cpu_cores_per_node \}\}
+                        {{ machine.compute_pool_1.cpu_cores_per_node }}
                       </td>
                     </tr>
                   </tbody>
@@ -439,7 +439,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.accelerators_per_node \}\}
+                        {{ machine.compute_pool_1.accelerators_per_node }}
                       </td>
                     </tr>
                   </tbody>
@@ -462,7 +462,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.accelerator_type \}\}
+                        {{ machine.compute_pool_1.accelerator_type }}
                       </td>
                     </tr>
                   </tbody>
@@ -485,7 +485,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.cpu_type \}\}
+                        {{ machine.compute_pool_1.cpu_type }}
                       </td>
                     </tr>
                   </tbody>
@@ -508,7 +508,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.clock_speed \}\}
+                        {{ machine.compute_pool_1.clock_speed }}
                       </td>
                     </tr>
                   </tbody>
@@ -531,7 +531,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.concurrency \}\}
+                        {{ machine.compute_pool_1.concurrency }}
                       </td>
                     </tr>
                   </tbody>
@@ -555,7 +555,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.nic_1.name \}\}
+                        {{ machine.compute_pool_1.nic_1.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -578,7 +578,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.nic_1.bandwidth \}\}
+                        {{ machine.compute_pool_1.nic_1.bandwidth }}
                       </td>
                     </tr>
                   </tbody>
@@ -601,7 +601,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.nic_1.vendor \}\}
+                        {{ machine.compute_pool_1.nic_1.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -624,7 +624,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.nic_2.name \}\}
+                        {{ machine.compute_pool_1.nic_2.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -647,7 +647,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.nic_2.bandwidth \}\}
+                        {{ machine.compute_pool_1.nic_2.bandwidth }}
                       </td>
                     </tr>
                   </tbody>
@@ -670,7 +670,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_1.nic_2.vendor \}\}
+                        {{ machine.compute_pool_1.nic_2.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -695,7 +695,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.name \}\}
+                        {{ machine.compute_pool_2.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -718,7 +718,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.description \}\}
+                        {{ machine.compute_pool_2.description }}
                       </td>
                     </tr>
                   </tbody>
@@ -741,7 +741,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.vendor \}\}
+                        {{ machine.compute_pool_2.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -764,7 +764,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.model_number \}\}
+                        {{ machine.compute_pool_2.model_number }}
                       </td>
                     </tr>
                   </tbody>
@@ -787,7 +787,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.number_of_nodes \}\}
+                        {{ machine.compute_pool_2.number_of_nodes }}
                       </td>
                     </tr>
                   </tbody>
@@ -810,7 +810,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.memory_per_node \}\}
+                        {{ machine.compute_pool_2.memory_per_node }}
                       </td>
                     </tr>
                   </tbody>
@@ -833,7 +833,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.cpu_cores_per_node \}\}
+                        {{ machine.compute_pool_2.cpu_cores_per_node }}
                       </td>
                     </tr>
                   </tbody>
@@ -859,7 +859,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.accelerators_per_node \}\}
+                        {{ machine.compute_pool_2.accelerators_per_node }}
                       </td>
                     </tr>
                   </tbody>
@@ -882,7 +882,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.accelerator_type \}\}
+                        {{ machine.compute_pool_2.accelerator_type }}
                       </td>
                     </tr>
                   </tbody>
@@ -905,7 +905,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.cpu_type \}\}
+                        {{ machine.compute_pool_2.cpu_type }}
                       </td>
                     </tr>
                   </tbody>
@@ -928,7 +928,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.clock_speed \}\}
+                        {{ machine.compute_pool_2.clock_speed }}
                       </td>
                     </tr>
                   </tbody>
@@ -951,7 +951,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.concurrency \}\}
+                        {{ machine.compute_pool_2.concurrency }}
                       </td>
                     </tr>
                   </tbody>
@@ -975,7 +975,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.nic_1.name \}\}
+                        {{ machine.compute_pool_2.nic_1.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -998,7 +998,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.nic_1.bandwidth \}\}
+                        {{ machine.compute_pool_2.nic_1.bandwidth }}
                       </td>
                     </tr>
                   </tbody>
@@ -1021,7 +1021,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.nic_1.vendor \}\}
+                        {{ machine.compute_pool_2.nic_1.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -1044,7 +1044,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.nic_2.name \}\}
+                        {{ machine.compute_pool_2.nic_2.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -1067,7 +1067,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.nic_2.bandwidth \}\}
+                        {{ machine.compute_pool_2.nic_2.bandwidth }}
                       </td>
                     </tr>
                   </tbody>
@@ -1090,7 +1090,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.compute_pool_2.nic_2.vendor \}\}
+                        {{ machine.compute_pool_2.nic_2.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -1116,7 +1116,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_1.name \}\}
+                        {{ machine.storage_pool_1.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -1139,7 +1139,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_1.file_system_sizes \}\}
+                        {{ machine.storage_pool_1.file_system_sizes }}
                       </td>
                     </tr>
                   </tbody>
@@ -1162,7 +1162,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_1.description \}\}
+                        {{ machine.storage_pool_1.description }}
                       </td>
                     </tr>
                   </tbody>
@@ -1185,7 +1185,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_1.type \}\}
+                        {{ machine.storage_pool_1.type }}
                       </td>
                     </tr>
                   </tbody>
@@ -1208,7 +1208,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_1.vendor \}\}
+                        {{ machine.storage_pool_1.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -1232,7 +1232,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_2.name \}\}
+                        {{ machine.storage_pool_2.name }}
                       </td>
                     </tr>
                   </tbody>
@@ -1255,7 +1255,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_2.file_system_sizes \}\}
+                        {{ machine.storage_pool_2.file_system_sizes }}
                       </td>
                     </tr>
                   </tbody>
@@ -1278,7 +1278,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_2.description \}\}
+                        {{ machine.storage_pool_2.description }}
                       </td>
                     </tr>
                   </tbody>
@@ -1301,7 +1301,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_2.type \}\}
+                        {{ machine.storage_pool_2.type }}
                       </td>
                     </tr>
                   </tbody>
@@ -1324,7 +1324,7 @@
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
                       <td>
-                        \{\{ machine.storage_pool_2.vendor \}\}
+                        {{ machine.storage_pool_2.vendor }}
                       </td>
                     </tr>
                   </tbody>
@@ -1350,7 +1350,7 @@
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
                     <td>
-                      \{\{ machine.interconnect.name \}\}
+                      {{ machine.interconnect.name }}
                     </td>
                   </tr>
                 </tbody>
@@ -1373,7 +1373,7 @@
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
                     <td>
-                      \{\{ machine.interconnect.topology \}\}
+                      {{ machine.interconnect.topology }}
                     </td>
                   </tr>
                 </tbody>
@@ -1396,7 +1396,7 @@
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
                     <td>
-                      \{\{ machine.interconnect.description \}\}
+                      {{ machine.interconnect.description }}
                     </td>
                   </tr>
                 </tbody>
@@ -1419,7 +1419,7 @@
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
                     <td>
-                      \{\{ machine.interconnect.vendor \}\}
+                      {{ machine.interconnect.vendor }}
                     </td>
                   </tr>
                 </tbody>
@@ -1445,7 +1445,7 @@
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
                     <td>
-                      \{\{ machine.benchmark_perf.peak \}\}
+                      {{ machine.benchmark_perf.peak }}
                     </td>
                   </tr>
                 </tbody>
@@ -1468,7 +1468,7 @@
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
                     <td>
-                      \{\{ machine.benchmark_perf.linpack \}\}
+                      {{ machine.benchmark_perf.linpack }}
                     </td>
                   </tr>
                 </tbody>
@@ -1485,9 +1485,103 @@
 </template>
 
 <script>
-  export default {
-    name: 'Machine',
+// Define the data to use
+const machine_data = {
+  institute: {
+    name: "[INSTITUTE NAME]",
+  },
+  machine: {
+    name: "[MACHINE NAME]",
+    partition: "[PARTITION VALUE]",
+    location: "[LOCATION VALUE]",
+    description: "[DESCRIPTION VALUE]",
+    online_documentation: "[ONLINE DOCS VALUE]",
+    when_available_from: "[WHEN AVAILABLE FROM VALUE]",
+    when_available_to: "[WHEN AVAILABLE TO VALUE]",
+    os: "[OS VALUE]",
+    vendor: "[VENDOR VALUE]",
+    model_number: "[MODEL NUMBER VALUE]",
+    compute_pool_1: {
+      name: "[CP1 NAME VALUE]",
+      description: "[CP1 DESCRIPTION VALUE]",
+      vendor: "[CP1 VENDOR VALUE]",
+      model_number: "[CP1 MODEL NUMBER VALUE]",
+      number_of_nodes: "[CP1 NUMBER OF NODES VALUE]",
+      memory_per_node: "[CP1 MEMORY PER NODE VALUE]",
+      cpu_cores_per_node: "[CP1 CPU CORES PER NODE VALUE]",
+      accelerators_per_node: "[CP1 ACCELERATORS PER NODE VALUE]",
+      accelerator_type: "[CP1 ACCELERATOR TYPE VALUE]",
+      cpu_type: "[CP1 CPU TYPE VALUE]",
+      clock_speed: "[CP1 CLOCK SPEED VALUE]",
+      concurrency: "[CP1 CONCURRENCY VALUE]",
+      nic_1: {
+        name: "[CP1 N1 NAME VALUE]",
+        bandwidth: "[CP1 N1 BANDWIDTH VALUE]",
+        vendor: "[CP1 N1 VENDOR VALUE]",
+      },
+      nic_2: {
+        name: "[CP1 N2 NAME VALUE]",
+        bandwidth: "[CP1 N2 BANDWIDTH VALUE]",
+        vendor: "[CP1 N2 VENDOR VALUE]",
+      },
+    },
+    compute_pool_2: {
+      name: "[CP2 NAME VALUE]",
+      description: "[CP2 DESCRIPTION VALUE]",
+      vendor: "[CP2 VENDOR VALUE]",
+      model_number: "[CP2 MODEL NUMBER VALUE]",
+      number_of_nodes: "[CP2 NUMBER OF NODES VALUE]",
+      memory_per_node: "[CP2 MEMORY PER NODE VALUE]",
+      cpu_cores_per_node: "[CP2 CPU CORES PER NODE VALUE]",
+      accelerators_per_node: "[CP2 ACCELERATORS PER NODE VALUE]",
+      accelerator_type: "[CP2 ACCELERATOR TYPE VALUE]",
+      cpu_type: "[CP2 CPU TYPE VALUE]",
+      clock_speed: "[CP2 CLOCK SPEED VALUE]",
+      concurrency: "[CP2 CONCURRENCY VALUE]",
+      nic_1: {
+        name: "[CP2 N1 NAME VALUE]",
+        bandwidth: "[CP2 N1 BANDWIDTH VALUE]",
+        vendor: "[CP2 N1 VENDOR VALUE]",
+      },
+      nic_2: {
+        name: "[CP2 N2 NAME VALUE]",
+        bandwidth: "[CP2 N2 BANDWIDTH VALUE]",
+        vendor: "[CP2 N2 VENDOR VALUE]",
+      },
+    },
+    storage_pool_1: {
+      name: "[SP1 NAME VALUE]",
+      file_system_sizes: "[SP1 FILE_SYSTEM_SIZES VALUE]",
+      description: "[SP1 DESCRIPTION VALUE]",
+      type: "[SP1 TYPE VALUE]",
+      vendor: "[SP1 VENDOR VALUE]",
+    },
+    storage_pool_2: {
+      name: "[SP2 NAME VALUE]",
+      file_system_sizes: "[SP2 FILE_SYSTEM_SIZES VALUE]",
+      description: "[SP2 DESCRIPTION VALUE]",
+      type: "[SP2 TYPE VALUE]",
+      vendor: "[SP2 VENDOR VALUE]",
+    },
+    interconnect: {
+      name: "[INTERCONNECT NAME VALUE]",
+      topology: "[INTERCONNECT TOPOLOGY VALUE]",
+      description: "[INTERCONNECT DESCRIPTION VALUE]",
+      vendor: "[INTERCONNECT VENDOR VALUE]",
+    },
+    benchmark_perf: {
+      peak: "[BENCHMARK PERFORMANCE PEAK VALUE]",
+      linpack: "[BENCHMARK PERFORMANCE LINPACK VALUE]",
+    },
+  },
+}
+
+export default {
+  name: 'Machine',
+  data() {
+    return machine_data
   }
+}
 </script>
 
 
