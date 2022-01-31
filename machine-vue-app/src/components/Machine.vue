@@ -3,9 +3,14 @@
   <div id="app">
     <div>
       <nav class="navbar cim2-model-main-header navbar-light navbar-expand">
-        <a href="https://www.wcrp-climate.org" target="_self" class="navbar-brand"><img src="../../src/assets/logo-wcrp-small.png" alt="Earth System Documentation" style="margin-top: -9px;"></a><a href="https://es-doc.org" target="_self" class="navbar-brand"><img src="data:image/png;base64,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" alt="Earth System Documentation" style="margin-top: -4px;">
-        &nbsp;
-        <b>ES-DOC</b> Explorer <span class="app-version">v1.1.5</span></a>
+        <a href="https://www.wcrp-climate.org" target="_self" class="navbar-brand">
+          <img src="../../src/assets/logo-wcrp-small.png" alt="Earth System Documentation" style="margin-top: -9px;">
+        </a>
+        <a href="https://es-doc.org" target="_self" class="navbar-brand">
+          <img src="../../src/assets/logo-2-icon.png" alt="Earth System Documentation" style="margin-top: -4px;">
+          &nbsp;
+          <b>ES-DOC</b> Explorer <span class="app-version">v1.1.5</span>
+        </a>
         <ul class="navbar-nav ml-auto">
           <li class="navbar-text" style="color: black;"><b>CMIP6 Machine: {{ institute.name }} &gt; {{ machine.name }}</b></li>
         </ul>
@@ -600,7 +605,6 @@
                     </tr>
                   </tbody>
                 </table>
-
                 <table class="table table-bordered table-sm small esdoc-table-info">
                   <thead>
                     <tr>
@@ -1070,7 +1074,6 @@
                     </tr>
                   </tbody>
                 </table>
-
                 <table class="table table-bordered table-sm small esdoc-table-info">
                   <thead>
                     <tr>
@@ -1227,7 +1230,6 @@
                     </tr>
                   </tbody>
                 </table>
-
                 <div class="sub-section"><strong>Storage pools</strong></div>
                 <div class="sub-section"><strong>Storage Pool 1</strong></div>
                 <table class="table table-bordered table-sm small esdoc-table-info">
@@ -1493,174 +1495,172 @@
                 </table>
               </div>
               <div>
-              <div class="sub-section"><strong>Interconnect</strong></div>
-              <table class="table table-bordered table-sm small esdoc-table-info">
-                <thead>
-                  <tr>
-                    <th colspan="2">
-                      Interconnect &gt; Name
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="caption"><strong>Description</strong></td>
-                    <td>
-                      Name of interconnnect
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td v-if="machine.interconnect && machine.interconnect.name">
-                      {{ machine.interconnect.name }}
-                    </td>
-                    <td v-else>
-                      {{ no_value }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table table-bordered table-sm small esdoc-table-info">
-                <thead>
-                  <tr>
-                    <th colspan="2">
-                      Interconnect &gt; Topology
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="caption"><strong>Description</strong></td>
-                    <td>
-                      Interconnect topology
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td v-if="machine.interconnect && machine.interconnect.topology">
-                      {{ machine.interconnect.topology }}
-                    </td>
-                    <td v-else>
-                      {{ no_value }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table table-bordered table-sm small esdoc-table-info">
-                <thead>
-                  <tr>
-                    <th colspan="2">
-                      Interconnect &gt; Description
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="caption"><strong>Description</strong></td>
-                    <td>
-                      Technical description of interconnect layout
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td v-if="machine.interconnect && machine.interconnect.topology">
-                      {{ machine.interconnect.topology }}
-                    </td>
-                    <td v-else>
-                      {{ no_value }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table table-bordered table-sm small esdoc-table-info">
-                <thead>
-                  <tr>
-                    <th colspan="2">
-                      Interconnect &gt; Vendor
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="caption"><strong>Description</strong></td>
-                    <td>
-                      Supplier of the interconnect
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td v-if="machine.interconnect && machine.interconnect.vendor">
-                      {{ machine.interconnect.vendor }}
-                    </td>
-                    <td v-else>
-                      {{ no_value }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                <div class="sub-section"><strong>Interconnect</strong></div>
+                <table class="table table-bordered table-sm small esdoc-table-info">
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        Interconnect &gt; Name
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="caption"><strong>Description</strong></td>
+                      <td>
+                        Name of interconnnect
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <td v-if="machine.interconnect && machine.interconnect.name">
+                        {{ machine.interconnect.name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered table-sm small esdoc-table-info">
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        Interconnect &gt; Topology
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="caption"><strong>Description</strong></td>
+                      <td>
+                        Interconnect topology
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <td v-if="machine.interconnect && machine.interconnect.topology">
+                        {{ machine.interconnect.topology }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered table-sm small esdoc-table-info">
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        Interconnect &gt; Description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="caption"><strong>Description</strong></td>
+                      <td>
+                        Technical description of interconnect layout
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <td v-if="machine.interconnect && machine.interconnect.topology">
+                        {{ machine.interconnect.topology }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered table-sm small esdoc-table-info">
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        Interconnect &gt; Vendor
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="caption"><strong>Description</strong></td>
+                      <td>
+                        Supplier of the interconnect
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <td v-if="machine.interconnect && machine.interconnect.vendor">
+                        {{ machine.interconnect.vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <div class="sub-section"><strong>Benchmark performance</strong></div>
+                <table class="table table-bordered table-sm small esdoc-table-info">
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        Benchmark performance &gt; Peak performance
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="caption"><strong>Description</strong></td>
+                      <td>
+                        Total peak performance (RPeak in Top500 lingo)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <td v-if="machine.peakPerformance">
+                        {{ machine.peakPerformance }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered table-sm small esdoc-table-info">
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        Benchmark performance &gt; LINPACK performance
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="caption"><strong>Description</strong></td>
+                      <td>
+                        Linpack performance (RMax in Top500 lingo)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <td v-if="machine.linpackPerformance">
+                        {{ machine.linpackPerformance }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div>
-              <div class="sub-section"><strong>Benchmark performance</strong></div>
-              <table class="table table-bordered table-sm small esdoc-table-info">
-                <thead>
-                  <tr>
-                    <th colspan="2">
-                      Benchmark performance &gt; Peak performance
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="caption"><strong>Description</strong></td>
-                    <td>
-                      Total peak performance (RPeak in Top500 lingo)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td v-if="machine.peakPerformance">
-                      {{ machine.peakPerformance }}
-                    </td>
-                    <td v-else>
-                      {{ no_value }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table table-bordered table-sm small esdoc-table-info">
-                <thead>
-                  <tr>
-                    <th colspan="2">
-                      Benchmark performance &gt; LINPACK performance
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="caption"><strong>Description</strong></td>
-                    <td>
-                      Linpack performance (RMax in Top500 lingo)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td v-if="machine.linpackPerformance">
-                      {{ machine.linpackPerformance }}
-                    </td>
-                    <td v-else>
-                      {{ no_value }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!----><!---->
           </div>
         </div>
       </div>
     </div>
-    <!----><!---->
-  </div>
   </div>
 </template>
 
