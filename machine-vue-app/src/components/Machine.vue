@@ -54,6 +54,7 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
+                      <!-- Note: compulsory data field, so no need for v- if/else catch -->
                       <td>
                         {{ machine.name }}
                       </td>
@@ -76,9 +77,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.partition }}
+                      <td rowspan="1" classno_value_message="caption"><strong>Value</strong></td>
+                      <td v-if="machine.partition && machine.partition.name">
+                        {{ machine.partition.name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -103,8 +107,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.location }}
+                      <td v-if="machine.institution">
+                        {{ machine.institution }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -126,8 +133,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
+                      <td v-if="machine.description">
                         {{ machine.description }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -149,8 +159,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.online_documentation }}
+                      <td v-if="machine.onlineDocumentation && machine.onlineDocumentation.length > 0">
+                        {{ machine.onlineDocumentation[0] }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -172,14 +185,20 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value: From</strong></td>
-                      <td>
-                        {{ machine.when_available_from }}
+                      <td v-if="machine.whenUsed && machine.whenUsed.length > 0">
+                        {{ machine.whenUsed[0] }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value: To</strong></td>
-                      <td>
-                        {{ machine.when_available_to }}
+                      <td v-if="machine.whenUsed && machine.whenUsed.length > 1">
+                        {{ machine.whenUsed[1] }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -201,8 +220,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.os }}
+                      <td v-if="machine.operatingSystem">
+                        {{ machine.operatingSystem }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -227,8 +249,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
+                      <td v-if="machine.vendor">
                         {{ machine.vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -250,8 +275,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.model_number }}
+                      <td v-if="machine.modelNumber">
+                        {{ machine.modelNumber }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -277,8 +305,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.name }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].name">
+                        {{ machine.computePools[0].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -300,8 +331,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.description }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].description">
+                        {{ machine.computePools[0].description }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -323,8 +357,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.vendor }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].vendor">
+                        {{ machine.computePools[0].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -346,8 +383,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.model_number }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].modelNumber">
+                        {{ machine.computePools[0].modelNumber }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -369,8 +409,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.number_of_nodes }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].numberOfNodes">
+                        {{ machine.computePools[0].numberOfNodes }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -392,8 +435,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.memory_per_node }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].memoryPerNode">
+                        {{ machine.computePools[0].memoryPerNode }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -415,8 +461,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.cpu_cores_per_node }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].computeCoresPerNode">
+                        {{ machine.computePools[0].computeCoresPerNode }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -438,8 +487,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.accelerators_per_node }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].acceleratorsPerNode">
+                        {{ machine.computePools[0].acceleratorsPerNode }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -461,8 +513,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.accelerator_type }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].acceleratorType">
+                        {{ machine.computePools[0].acceleratorType }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -484,8 +539,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.cpu_type }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].cpuType">
+                        {{ machine.computePools[0].cpuType }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -507,8 +565,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.clock_speed }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].clockSpeed">
+                        {{ machine.computePools[0].clockSpeed }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -530,8 +591,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.concurrency }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].ClockCycleConcurrency">
+                        {{ machine.computePools[0].ClockCycleConcurrency }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -554,8 +618,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.nic_1.name }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].networkCardsPerNode && machine.computePools[0].networkCardsPerNode.length > 0 && machine.computePools[0].networkCardsPerNode[0].name">
+                        {{ machine.computePools[0].networkCardsPerNode[0].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -577,8 +644,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.nic_1.bandwidth }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].networkCardsPerNode && machine.computePools[0].networkCardsPerNode.length > 0 && machine.computePools[0].networkCardsPerNode[0].bandwidth">
+                        {{ machine.computePools[0].networkCardsPerNode[0].bandwidth }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -600,8 +670,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.nic_1.vendor }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].networkCardsPerNode && machine.computePools[0].networkCardsPerNode.length > 0 && machine.computePools[0].networkCardsPerNode[0].vendor">
+                        {{ machine.computePools[0].networkCardsPerNode[0].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -623,8 +696,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.nic_2.name }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].networkCardsPerNode && machine.computePools[0].networkCardsPerNode.length > 1 && machine.computePools[0].networkCardsPerNode[1].name">
+                        {{ machine.computePools[0].networkCardsPerNode[1].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -646,8 +722,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.nic_2.bandwidth }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].networkCardsPerNode && machine.computePools[0].networkCardsPerNode.length > 1 && machine.computePools[0].networkCardsPerNode[1].bandwidth">
+                        {{ machine.computePools[0].networkCardsPerNode[1].bandwidth }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -669,13 +748,15 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_1.nic_2.vendor }}
+                      <td v-if="machine.computePools && machine.computePools.length > 0 && machine.computePools[0].networkCardsPerNode && machine.computePools[0].networkCardsPerNode.length > 1 && machine.computePools[0].networkCardsPerNode[1].vendor">
+                        {{ machine.computePools[0].networkCardsPerNode[1].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
                 </table>
-
                 <div class="sub-section"><strong>Compute Pool 2</strong></div>
                 <table class="table table-bordered table-sm small esdoc-table-info">
                   <thead>
@@ -694,8 +775,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.name }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].name">
+                        {{ machine.computePools[1].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -717,8 +801,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.description }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].description">
+                        {{ machine.computePools[1].description }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -740,8 +827,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.vendor }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].vendor">
+                        {{ machine.computePools[1].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -763,8 +853,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.model_number }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].modelNumber">
+                        {{ machine.computePools[1].modelNumber }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -786,8 +879,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.number_of_nodes }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].numberOfNodes">
+                        {{ machine.computePools[1].numberOfNodes }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -809,8 +905,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.memory_per_node }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].memoryPerNode">
+                        {{ machine.computePools[1].memoryPerNode }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -832,15 +931,15 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.cpu_cores_per_node }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].computeCoresPerNode">
+                        {{ machine.computePools[1].computeCoresPerNode }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
                 </table>
-              </div>
-              <div>
-
                 <table class="table table-bordered table-sm small esdoc-table-info">
                   <thead>
                     <tr>
@@ -858,8 +957,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.accelerators_per_node }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].acceleratorsPerNode">
+                        {{ machine.computePools[1].acceleratorsPerNode }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -881,8 +983,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.accelerator_type }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].acceleratorType">
+                        {{ machine.computePools[1].acceleratorType }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -904,8 +1009,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.cpu_type }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].cpuType">
+                        {{ machine.computePools[1].cpuType }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -927,8 +1035,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.clock_speed }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].clockSpeed">
+                        {{ machine.computePools[1].clockSpeed }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -950,8 +1061,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.concurrency }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].ClockCycleConcurrency">
+                        {{ machine.computePools[1].ClockCycleConcurrency }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -974,8 +1088,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.nic_1.name }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].networkCardsPerNode && machine.computePools[1].networkCardsPerNode.length > 0 && machine.computePools[1].networkCardsPerNode[0].name">
+                        {{ machine.computePools[1].networkCardsPerNode[0].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -997,8 +1114,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.nic_1.bandwidth }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].networkCardsPerNode && machine.computePools[1].networkCardsPerNode.length > 0 && machine.computePools[1].networkCardsPerNode[0].bandwidth">
+                        {{ machine.computePools[1].networkCardsPerNode[0].bandwidth }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1020,8 +1140,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.nic_1.vendor }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].networkCardsPerNode && machine.computePools[1].networkCardsPerNode.length > 0 && machine.computePools[1].networkCardsPerNode[0].vendor">
+                        {{ machine.computePools[1].networkCardsPerNode[0].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1043,8 +1166,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.nic_2.name }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].networkCardsPerNode && machine.computePools[1].networkCardsPerNode.length > 1 && machine.computePools[1].networkCardsPerNode[1].name">
+                        {{ machine.computePools[1].networkCardsPerNode[1].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1066,8 +1192,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.nic_2.bandwidth }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].networkCardsPerNode && machine.computePools[1].networkCardsPerNode.length > 1 && machine.computePools[1].networkCardsPerNode[1].bandwidth">
+                        {{ machine.computePools[1].networkCardsPerNode[1].bandwidth }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1089,8 +1218,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.compute_pool_2.nic_2.vendor }}
+                      <td v-if="machine.computePools && machine.computePools.length > 1 && machine.computePools[1].networkCardsPerNode && machine.computePools[1].networkCardsPerNode.length > 1 && machine.computePools[1].networkCardsPerNode[1].vendor">
+                        {{ machine.computePools[1].networkCardsPerNode[1].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1115,8 +1247,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.storage_pool_1.name }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 0 && machine.storagePools[0].name">
+                        {{ machine.storagePools[0].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1138,8 +1273,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.storage_pool_1.file_system_sizes }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 0 && machine.storagePools[0].fileSystemSizes">
+                        {{ machine.storagePools[0].fileSystemSizes }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1161,8 +1299,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.storage_pool_1.description }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 0 && machine.storagePools[0].description">
+                        {{ machine.storagePools[0].description }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1184,8 +1325,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.storage_pool_1.type }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 0 && machine.storagePools[0].type">
+                        {{ machine.storagePools[0].type }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1207,8 +1351,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.storage_pool_1.vendor }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 0 && machine.storagePools[0].vendor">
+                        {{ machine.storagePools[0].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1231,8 +1378,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.storage_pool_2.name }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 1 && machine.storagePools[1].name">
+                        {{ machine.storagePools[1].name }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1254,8 +1404,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.storage_pool_2.file_system_sizes }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 1 && machine.storagePools[1].fileSystemSizes">
+                        {{ machine.storagePools[1].fileSystemSizes }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1277,8 +1430,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.storage_pool_2.description }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 1 && machine.storagePools[1].description">
+                        {{ machine.storagePools[1].description }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1300,8 +1456,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Value</strong></td>
-                      <td>
-                        {{ machine.storage_pool_2.type }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 1 && machine.storagePools[1].type">
+                        {{ machine.storagePools[1].type }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1323,8 +1482,11 @@
                     </tr>
                     <tr>
                       <td rowspan="1" class="caption"><strong>Values</strong></td>
-                      <td>
-                        {{ machine.storage_pool_2.vendor }}
+                      <td v-if="machine.storagePools && machine.storagePools.length > 1 && machine.storagePools[1].vendor">
+                        {{ machine.storagePools[1].vendor }}
+                      </td>
+                      <td v-else>
+                        {{ no_value }}
                       </td>
                     </tr>
                   </tbody>
@@ -1349,8 +1511,11 @@
                   </tr>
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td>
+                    <td v-if="machine.interconnect && machine.interconnect.name">
                       {{ machine.interconnect.name }}
+                    </td>
+                    <td v-else>
+                      {{ no_value }}
                     </td>
                   </tr>
                 </tbody>
@@ -1372,8 +1537,11 @@
                   </tr>
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td>
+                    <td v-if="machine.interconnect && machine.interconnect.topology">
                       {{ machine.interconnect.topology }}
+                    </td>
+                    <td v-else>
+                      {{ no_value }}
                     </td>
                   </tr>
                 </tbody>
@@ -1395,8 +1563,11 @@
                   </tr>
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td>
-                      {{ machine.interconnect.description }}
+                    <td v-if="machine.interconnect && machine.interconnect.topology">
+                      {{ machine.interconnect.topology }}
+                    </td>
+                    <td v-else>
+                      {{ no_value }}
                     </td>
                   </tr>
                 </tbody>
@@ -1418,8 +1589,11 @@
                   </tr>
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td>
+                    <td v-if="machine.interconnect && machine.interconnect.vendor">
                       {{ machine.interconnect.vendor }}
+                    </td>
+                    <td v-else>
+                      {{ no_value }}
                     </td>
                   </tr>
                 </tbody>
@@ -1444,8 +1618,11 @@
                   </tr>
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td>
-                      {{ machine.benchmark_perf.peak }}
+                    <td v-if="machine.peakPerformance">
+                      {{ machine.peakPerformance }}
+                    </td>
+                    <td v-else>
+                      {{ no_value }}
                     </td>
                   </tr>
                 </tbody>
@@ -1467,8 +1644,11 @@
                   </tr>
                   <tr>
                     <td rowspan="1" class="caption"><strong>Value</strong></td>
-                    <td>
-                      {{ machine.benchmark_perf.linpack }}
+                    <td v-if="machine.linpackPerformance">
+                      {{ machine.linpackPerformance }}
+                    </td>
+                    <td v-else>
+                      {{ no_value }}
                     </td>
                   </tr>
                 </tbody>
@@ -1486,14 +1666,24 @@
 
 <script>
 // Get the data to use, which is in JSON form (valid in both JS and Python).
-import machine_data from '../../../json-data/institute-machines.json'
+import machine_data from '../../../json-data/institute-machine.json';
+
+const no_value_message = "--";
+
+var machine_fe_data = {
+  "institute": {
+    "name": "[INSTITUTE NAME]"
+  },
+  "machine": machine_data,
+  "no_value": no_value_message
+};
 
 export default {
   name: 'Machine',
   data() {
-    return machine_data
+    return machine_fe_data;
   }
-}
+};
 </script>
 
 
